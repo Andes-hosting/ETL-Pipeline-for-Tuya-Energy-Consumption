@@ -1,0 +1,4 @@
+tuya-connector-python
+pandas
+psycopg2-binary
+sqlalchemy
