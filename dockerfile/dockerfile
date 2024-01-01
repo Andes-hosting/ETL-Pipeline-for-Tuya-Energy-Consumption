@@ -2,16 +2,17 @@ FROM ubuntu:focal
 
 # Set the Timezone
 ENV TZ "America/Santiago"
-# Set Pterodactyl url and api keys
-ENV PTERODACTYL_URL "https://pterodactyl.custom.domain"
-ENV PTERODACTYL_APP_KEY "apikey1"
-ENV PTERODACTYL_CLI_KEY "apikey2"
+# Set Tuya endpoint and api key
+ENV TUYA_API_ENDPOINT = 'us'
+ENV TUYA_ACCESS_ID = 'this_is_an_access_id'
+ENV TUYA_ACCESS_KEY = 'this_is_a_super_long_secret_key'
 # Set Postgres database configuration for connection
 ENV POSTGRES_HOST "host"
 ENV POSTGRES_PORT "port"
 ENV POSTGRES_DATABASE "db"
 ENV POSTGRES_USERNAME "user"
 ENV POSTGRES_PASSWORD "pass"
+
 # Best practices
 ENV PYTHONUNBUFFERED 1
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -19,11 +20,8 @@ ENV PYTHONDONTWRITEBYTECODE 1
 # Set the working directory to /app and copy files there
 WORKDIR /app
 COPY requirements.txt scheduler.py /app/
-COPY pterodactyl_application.ipynb /app/
-COPY pterodactyl_minecraft_logs.ipynb /app/
-COPY pterodactyl_resource_consumption.ipynb /app/
+COPY tuya_energy_consumption.ipynb /app/
 
-RUN mkdir /app/server_app_data /app/raw_logs_folder
 RUN mkdir /app/logs
 RUN touch /app/logs/logs.log
 

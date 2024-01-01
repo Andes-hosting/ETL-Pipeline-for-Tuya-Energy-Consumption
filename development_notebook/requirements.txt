@@ -1,4 +1,5 @@
-tuya-connector-python
+tinytuya
 pandas
 psycopg2-binary
 sqlalchemy
+dotenv

@@ -17,11 +17,7 @@ def run_ipynb(filename_ipynb, timeout):
     print(f'- {filename_ipynb} finished successfully')
 
 # Schedule pterodactyl_application everyday
-schedule.every().day.at("06:00").do(run_ipynb, filename_ipynb='pterodactyl_application.ipynb', timeout=TIMEOUT)
-schedule.every().day.at("12:00").do(run_ipynb, filename_ipynb='pterodactyl_application.ipynb', timeout=TIMEOUT)
-schedule.every().day.at("18:00").do(run_ipynb, filename_ipynb='pterodactyl_application.ipynb', timeout=TIMEOUT)
-schedule.every().day.at("07:00").do(run_ipynb, filename_ipynb='pterodactyl_minecraft_logs.ipynb', timeout=TIMEOUT)
-schedule.every(30).minutes.do(run_ipynb, filename_ipynb='pterodactyl_resource_consumption.ipynb', timeout=TIMEOUT)
+schedule.every(2).minutes.do(run_ipynb, filename_ipynb='tuya_energy_consumption.ipynb', timeout=TIMEOUT)
 
 # Run the scheduler loop
 print('[The schedule has started]')
@@ -35,4 +31,4 @@ for line in str(schedule.get_jobs())[1:-1].replace('), ','||').replace(' do ',' 
 print('')
 while True:
     schedule.run_pending()
-    time.sleep(600) # Wait 10 minutes before check again the tasks to run
+    time.sleep(60) # Wait 1 minute before check again the tasks to run

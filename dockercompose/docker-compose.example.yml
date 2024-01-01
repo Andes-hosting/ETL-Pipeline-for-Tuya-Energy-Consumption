@@ -10,9 +10,9 @@ services:
       no_cache: true
     environment:
       TZ: America/Santiago
-      PTERODACTYL_URL: https://pterodactyl.yourdomain.com
-      PTERODACTYL_APP_KEY: this_is_a_super_long_secret_application_api_key
-      PTERODACTYL_CLI_KEY: this_is_a_super_long_secret_client_api_key
+      TUYA_API_ENDPOINT: us # cn, us, us-e, eu, eu-w, or in. Options based on tinytuya python library
+      TUYA_ACCESS_ID: this_is_an_access_id
+      TUYA_ACCESS_KEY: this_is_a_super_long_secret_key
       POSTGRES_HOST: host
       POSTGRES_PORT: 5432
       POSTGRES_DATABASE: db
